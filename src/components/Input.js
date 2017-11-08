@@ -3,6 +3,7 @@ import Item from './Item';
 import {connect} from "react-redux";
 import {bindActionCreators} from "redux"
 import * as todoAction from "../action/todoAction";
+import * as removeAction from "../action/removeToDoAction";
 class Input extends React.Component {
     state={todo:{title:""}};
 
@@ -15,9 +16,12 @@ this.setState({todo:todo});
  onClickSave(){
 this.props.action.addToDo(this.state.todo); 
  }  
+ 
  todoItem(item,index){
-     return <div key={index}>{item.title}</div>
+     return <div key={index}>{item.title}<button 
+     onClick={this.props.action2.removeToDo(this.state.todo) }>Remove</button></div>
  }
+ 
 render(){
     return(
         <div>
@@ -35,7 +39,8 @@ function mapStateToProps(state, ownProps){
     };
 }
 function mapDispatchToProps(dispatch){
-    return{action:bindActionCreators(todoAction,dispatch)
+    return{action:bindActionCreators(todoAction,dispatch),
+        action2:bindActionCreators(removeAction,dispatch)
     };
     
 }
