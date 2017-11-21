@@ -1,2 +1,3 @@
-# React Router example
+# React Examples
+React Router example
 React redux example
