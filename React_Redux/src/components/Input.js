@@ -14,8 +14,7 @@ class Input extends React.Component {
     }  
  
     todoItem(item,index){
-      return <div key={index}>{item.title}<button 
-        onClick={this.props.action2.removeToDo(this.state.todo) }>Remove</button></div>
+      return <div key={index}>{item.title}</div>;
     }
  
     render(){

@@ -29,4 +29,9 @@ module.exports = {
     new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.optimize.UglifyJsPlugin({ mangle: false, sourcemap: false }),
   ],
+   devServer: {
+    historyApiFallback: true,
+    contentBase: './',
+    hot: true
+  } 
 };
