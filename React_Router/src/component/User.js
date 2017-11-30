@@ -5,13 +5,13 @@ import Request from 'react-http-request';
 export default class User extends React.Component{
   constructor(props){
     super(props);
-    this.state={firstName: ''}
+    this.state={firstName: 'shubham'}
  }
 
   getName(){
      axios.get('http://localhost:3000/user')
     .then( (response) => {
-    console.log(response);
+    console.log(response.data);
     this.setState({firstName:response.data.name});
   })
     .catch((error) => {
@@ -24,7 +24,7 @@ export default class User extends React.Component{
             <Header />
             <button onClick={this.getName.bind(this)}>GET</button>
             <div>
-             {this.state.firstName}
+            my name is {this.state.firstName}.
             </div>
             </div>
             );

@@ -1,6 +1,8 @@
 import React from 'react';
 import Header from './Header';
 import axios from 'axios';
+
+import Demo from './demo';
 export default class Home extends React.Component{
  
   constructor(props){
@@ -28,6 +30,7 @@ export default class Home extends React.Component{
          <input type="text" placeholder="Enter Name" value={this.state.firstName} 
               onChange={(event) => this.setState({firstName: event.target.value})}/>
          <input type="submit" value="Post"/>
+         
          </form>
          </div>
            )
