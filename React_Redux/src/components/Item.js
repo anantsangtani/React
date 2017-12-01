@@ -6,12 +6,18 @@ import Header from './Header';
 class Item extends React.Component {
     render() {
         return (
-            <div>
-             <Header />
-                <div>Name:{this.props.form.name}</div>
-                <div>Age:{this.props.form.age}</div>
-                <div>Company Name:{this.props.form.company}</div>
-                <div>Employee Id:{this.props.form.empId}</div>
+            <div className="panel panel-default">
+                <Header />
+                <center>
+                    <h3>
+                        <table>
+                            <tr><td><div>Name:{this.props.form.name}</div></td></tr>
+                            <tr><td><div>Age:{this.props.form.age}</div></td></tr>
+                            <tr><td><div>Company Name:{this.props.form.company}</div></td></tr>
+                            <tr><td><div>Employee Id:{this.props.form.empId}</div></td></tr>
+                        </table>
+                    </h3>
+                </center>
             </div>
         );
     }

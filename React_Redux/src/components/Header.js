@@ -8,7 +8,7 @@ export default class Header extends React.Component {
                 <nav className="navbar navbar-default">
                     <div className="container-fluid float-right">
                         <div className="navbar-header">
-                            <Link to='/' className="navbar-brand" >WebSiteName</Link>
+                            <Link to='/' className="navbar-brand" >GJOW</Link>
                         </div>
                         <ul className="nav navbar-nav">
                             <li><Link to="/">Home</Link></li>

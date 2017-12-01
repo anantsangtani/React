@@ -26,7 +26,7 @@ class Input extends React.Component {
     return (
       <div className='row'>
       <Header />
-      <div className='col-md-4 col-md-offset-4'><center> <h1>To Do List</h1>
+      <div className='col-md-4 col-md-offset-4'><center> <h1>Sign Up</h1>
         <form onSubmit={this.onClickSave.bind(this)} className="form-group" >
           <div><input type="text" placeholder="Name" className="form-control" ref={(name) => { this.name = name } } /></div>
           <div><input type="text" placeholder="Age" className="form-control" ref={(age) => { this.age = age } } /></div>
