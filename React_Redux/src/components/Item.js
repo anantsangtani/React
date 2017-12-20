@@ -3,19 +3,43 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as userAction from '../action/userAction';
 import Header from './Header';
+import UserDetail from './UserDetail';
+import { Link } from 'react-router';
+import { browserHistory } from 'react-router';
 class Item extends React.Component {
+    componentDidMount(){
+         this.props.action.componentFetchRequest();
+    }
+   
+
+    fetchRequest() {
+        this.props.action.fetchRequest();
+       
+
+    }
+   
+
     render() {
+        let output = null;
+
+        if (!this.props.form.userName) {
+            output = <div>No User Logged In <Link to="/"> <a>Login</a></Link> </div>;
+        }
+        else {
+            if (this.props.form.userName === "user") {
+                output = <UserDetail />;
+            }
+            else {
+                output = <div> Welcome Admin <button onClick={this.fetchRequest.bind(this)}>View User Request</button></div>
+            }
+
+        }
         return (
             <div className="panel panel-default">
                 <Header />
                 <center>
                     <h3>
-                        <table>
-                            <tr><td><div>Name:{this.props.form.name}</div></td></tr>
-                            <tr><td><div>Age:{this.props.form.age}</div></td></tr>
-                            <tr><td><div>Company Name:{this.props.form.company}</div></td></tr>
-                            <tr><td><div>Employee Id:{this.props.form.empId}</div></td></tr>
-                        </table>
+                        {output}
                     </h3>
                 </center>
             </div>
@@ -24,7 +48,8 @@ class Item extends React.Component {
 }
 function mapStateToProps(state) {
     return {
-        form: state.user
+        form: state.user,
+        details: state.userDetails
     };
 }
 function mapDispatchToProps(dispatch) {

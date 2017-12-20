@@ -1,10 +1,13 @@
+
 export default function reducer(state = {}, action) {
 	switch (action.type) {
-		case "ADD_USER": state = Object.assign({}, state, action.payload);
+		case "USER_LOGIN_SUCCESS": state = Object.assign({}, state, action.payload);;
 			break;
-		case "REMOVE_TODO": state = { ...state, item: [...state.item.slice(0, action.payload), ...state.item.slice(action.payload + 1)] }
+		case "USER_LOGIN_FAIL": alert(action.payload);
 			break;
-		case "USER_REJECTED": state=state ; alert(action.payload);
+		case "USER_REJECTED": state = state; alert(action.payload);
+			break;
+		case "USER_LOGOUT": state = Object.assign({}, state, action.payload); alert("Logout Successfully");
 			break;
 		default: state;
 	}
